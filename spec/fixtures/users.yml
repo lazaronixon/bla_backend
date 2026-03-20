@@ -2,3 +2,8 @@ existing_member:
   email_address: member@example.com
   password_digest: <%= BCrypt::Password.create("password123") %>
   role: member
+
+librarian:
+  email_address: librarian@example.com
+  password_digest: <%= BCrypt::Password.create("password123") %>
+  role: librarian
