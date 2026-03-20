@@ -47,4 +47,7 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  # Replace minitest with rspec
+  gem "rspec-rails", "~> 8.0"
 end
