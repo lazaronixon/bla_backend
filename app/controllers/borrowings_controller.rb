@@ -1,9 +1,9 @@
 class BorrowingsController < ApplicationController
   before_action :set_book
-  before_action :set_borrowing, only: %i[ show update ]
+  before_action :set_borrowing, only: %i[ show update destroy ]
 
   before_action :ensure_member,    only: %i[ create ]
-  before_action :ensure_librarian, only: %i[ update ]
+  before_action :ensure_librarian, only: %i[ update destroy ]
 
   def index
     @borrowings = @book.borrowings.reverse_chronologically
@@ -24,6 +24,10 @@ class BorrowingsController < ApplicationController
 
   def update
     @borrowing.touch :returned_at; render(:show)
+  end
+
+  def destroy
+    @borrowing.destroy!
   end
 
   private

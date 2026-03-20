@@ -52,6 +52,23 @@ RSpec.describe "/books/:book_id/borrowings", type: :request do
     end
   end
 
+  describe "DELETE /destroy" do
+    let(:librarian_headers) { { "Authorization" => "Bearer #{users(:librarian).signed_id}" } }
+
+    it "destroys the borrowing" do
+      expect {
+        delete book_borrowing_url(books(:dune), borrowings(:active_borrowing)), headers: librarian_headers, as: :json
+      }.to change(Borrowing, :count).by(-1)
+
+      expect(response).to have_http_status(:no_content)
+    end
+
+    it "returns forbidden for a member" do
+      delete book_borrowing_url(books(:dune), borrowings(:active_borrowing)), headers: auth_headers, as: :json
+      expect(response).to have_http_status(:forbidden)
+    end
+  end
+
   describe "PATCH /update" do
     let(:librarian_headers) { { "Authorization" => "Bearer #{users(:librarian).signed_id}" } }
 
