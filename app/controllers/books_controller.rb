@@ -1,6 +1,6 @@
 class BooksController < ApplicationController
   before_action :set_book, only: %i[ show update destroy ]
-  before_action :ensure_permission_to_manage_books, only: %i[ create update destroy ]
+  before_action :ensure_librarian, only: %i[ create update destroy ]
 
   def index
     if params[:q].present?
@@ -32,9 +32,5 @@ class BooksController < ApplicationController
 
     def book_params
       params.expect(book: [ :title, :author, :genre, :isbn, :copies ])
-    end
-
-    def ensure_permission_to_manage_books
-      head :forbidden unless Current.user.librarian?
     end
 end

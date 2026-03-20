@@ -13,7 +13,20 @@ Rails.application.routes.draw do
   post   "sign_in",  to: "sessions#create"
   delete "sign_out", to: "sessions#destroy"
 
+  namespace :books do
+    resource :total,     only: :show
+    resource :due_today, only: :show
+  end
+
   resources :books do
     resources :borrowings
+  end
+
+  namespace :members do
+    resource :with_overdue_books, only: :show
+  end
+
+  namespace :my do
+    resource :borrowed_books
   end
 end

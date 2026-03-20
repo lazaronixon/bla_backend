@@ -11,4 +11,12 @@ class ApplicationController < ActionController::API
         request_http_token_authentication
       end
     end
+
+    def ensure_librarian
+      head :forbidden unless Current.user.librarian?
+    end
+
+    def ensure_member
+      head :forbidden unless Current.user.member?
+    end
 end

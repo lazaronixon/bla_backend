@@ -1,8 +1,9 @@
 class BorrowingsController < ApplicationController
   before_action :set_book
   before_action :set_borrowing, only: %i[ show update ]
-  before_action :ensure_permission_to_borrow_book, only: %i[ create ]
-  before_action :ensure_permission_to_return_book, only: %i[ update ]
+
+  before_action :ensure_member,    only: %i[ create ]
+  before_action :ensure_librarian, only: %i[ update ]
 
   def index
     @borrowings = @book.borrowings.reverse_chronologically
@@ -32,13 +33,5 @@ class BorrowingsController < ApplicationController
 
     def set_borrowing
       @borrowing = @book.borrowings.find(params[:id])
-    end
-
-    def ensure_permission_to_borrow_book
-      head :forbidden unless Current.user.member?
-    end
-
-    def ensure_permission_to_return_book
-      head :forbidden unless Current.user.librarian?
     end
 end

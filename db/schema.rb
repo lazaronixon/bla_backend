@@ -24,6 +24,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_03_20_051535) do
   create_table "borrowings", force: :cascade do |t|
     t.integer "book_id", null: false
     t.datetime "created_at", null: false
+    t.datetime "due_at", null: false
     t.datetime "returned_at"
     t.datetime "updated_at", null: false
     t.integer "user_id", null: false

@@ -10,7 +10,7 @@ RSpec.describe Borrowing, type: :model do
       end
 
       it "is valid when copies are available" do
-        borrowing = Borrowing.new(user: users(:another_member), book: books(:dune))
+        borrowing = Borrowing.new(user: users(:fresh_member), book: books(:dune))
         expect(borrowing).to be_valid
       end
     end
@@ -23,7 +23,7 @@ RSpec.describe Borrowing, type: :model do
       end
 
       it "is valid when the user has no active borrowing for the book" do
-        borrowing = Borrowing.new(user: users(:another_member), book: books(:dune))
+        borrowing = Borrowing.new(user: users(:fresh_member), book: books(:dune))
         expect(borrowing).to be_valid
       end
     end

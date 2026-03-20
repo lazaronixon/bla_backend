@@ -19,7 +19,7 @@ RSpec.describe "/books/:book_id/borrowings", type: :request do
 
   describe "POST /create" do
     it "creates a new borrowing" do
-      another_member_headers = { "Authorization" => "Bearer #{users(:another_member).signed_id}" }
+      another_member_headers = { "Authorization" => "Bearer #{users(:fresh_member).signed_id}" }
       expect {
         post book_borrowings_url(books(:dune)), headers: another_member_headers, as: :json
       }.to change(Borrowing, :count).by(1)
