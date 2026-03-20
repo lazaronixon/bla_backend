@@ -3,6 +3,11 @@ existing_member:
   password_digest: <%= BCrypt::Password.create("password123") %>
   role: member
 
+another_member:
+  email_address: another_member@example.com
+  password_digest: <%= BCrypt::Password.create("password123") %>
+  role: member
+
 librarian:
   email_address: librarian@example.com
   password_digest: <%= BCrypt::Password.create("password123") %>

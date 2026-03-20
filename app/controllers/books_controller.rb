@@ -3,18 +3,22 @@ class BooksController < ApplicationController
   before_action :ensure_permission_to_manage_books, only: %i[ create update destroy ]
 
   def index
-    @books = params[:q].present? ? Book.search(params[:q]) : Book.all
+    if params[:q].present?
+      @books = Book.chronologically.search(params[:q])
+    else
+      @books = Book.chronologically
+    end
   end
 
   def show
   end
 
   def create
-    @book = Book.create!(book_params); render :show, status: :created
+    @book = Book.create!(book_params); render(:show, status: :created)
   end
 
   def update
-    @book.update(book_params); render :show
+    @book.update!(book_params); render(:show)
   end
 
   def destroy

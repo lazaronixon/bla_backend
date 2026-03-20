@@ -1,0 +1,11 @@
+active_borrowing:
+  user: existing_member
+  book: dune
+
+pride_and_prejudice_full_1:
+  user: existing_member
+  book: pride_and_prejudice
+
+pride_and_prejudice_full_2:
+  user: librarian
+  book: pride_and_prejudice
