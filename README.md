@@ -23,6 +23,10 @@ This will load demo data including books, borrowings, and the following users:
 bin/dev
 ```
 
+## API
+
+See [API.md](API.md) for the full API reference, including authentication, endpoints, request/response formats, and role-based access details.
+
 ## Running the test suite
 
 ```bash
