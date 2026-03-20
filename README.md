@@ -1,24 +1,30 @@
-# README
+# BLA Backend
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A library management API built with Ruby on Rails.
 
-Things you may want to cover:
+## Setup
 
-* Ruby version
+Run the setup script to install dependencies, prepare the database, and load seed data from fixtures:
 
-* System dependencies
+```bash
+bin/setup
+```
 
-* Configuration
+This will load demo data including books, borrowings, and the following users:
 
-* Database creation
+| Role | Email | Password |
+|------|-------|----------|
+| Librarian | librarian@example.com | password123 |
+| Member | member@example.com | password123 |
 
-* Database initialization
+## Running the server
 
-* How to run the test suite
+```bash
+bin/dev
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+## Running the test suite
 
-* Deployment instructions
-
-* ...
+```bash
+bundle exec rspec
+```
