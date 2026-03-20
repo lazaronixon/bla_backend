@@ -9,4 +9,7 @@ Rails.application.routes.draw do
   # root "posts#index"
 
   post "sign_up", to: "registrations#create"
+
+  post   "sign_in",  to: "sessions#create"
+  delete "sign_out", to: "sessions#destroy"
 end
