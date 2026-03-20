@@ -1,15 +1,15 @@
-existing_member:
+member:
   email_address: member@example.com
   password_digest: <%= BCrypt::Password.create("password123") %>
   role: member
 
-another_member:
-  email_address: another_member@example.com
+member_two:
+  email_address: member_two@example.com
   password_digest: <%= BCrypt::Password.create("password123") %>
   role: member
 
-fresh_member:
-  email_address: fresh_member@example.com
+member_three:
+  email_address: member_three@example.com
   password_digest: <%= BCrypt::Password.create("password123") %>
   role: member
 

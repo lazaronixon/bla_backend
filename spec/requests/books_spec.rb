@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "/books", type: :request do
-  let(:auth_headers)      { { "Authorization" => "Bearer #{users(:existing_member).signed_id}" } }
+  let(:auth_headers)      { { "Authorization" => "Bearer #{users(:member).signed_id}" } }
   let(:librarian_headers) { { "Authorization" => "Bearer #{users(:librarian).signed_id}" } }
 
   describe "GET /index" do

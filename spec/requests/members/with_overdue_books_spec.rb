@@ -2,18 +2,18 @@ require 'rails_helper'
 
 RSpec.describe "/members/with_overdue_books", type: :request do
   let(:librarian_headers) { { "Authorization" => "Bearer #{users(:librarian).signed_id}" } }
-  let(:member_headers)    { { "Authorization" => "Bearer #{users(:existing_member).signed_id}" } }
+  let(:member_headers)    { { "Authorization" => "Bearer #{users(:member).signed_id}" } }
 
   describe "GET /members/with_overdue_books" do
     it "returns members with overdue borrowings" do
       get members_with_overdue_books_url, headers: librarian_headers, as: :json
       expect(response).to be_successful
-      expect(response.parsed_body.map { |u| u["id"] }).to include(users(:another_member).id)
+      expect(response.parsed_body.map { |u| u["id"] }).to include(users(:member_two).id)
     end
 
     it "excludes members without overdue borrowings" do
       get members_with_overdue_books_url, headers: librarian_headers, as: :json
-      expect(response.parsed_body.map { |u| u["id"] }).not_to include(users(:existing_member).id)
+      expect(response.parsed_body.map { |u| u["id"] }).not_to include(users(:member).id)
     end
 
     it "returns results ordered alphabetically by email" do

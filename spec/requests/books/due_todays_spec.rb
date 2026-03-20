@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "/books/due_today", type: :request do
   let(:librarian_headers) { { "Authorization" => "Bearer #{users(:librarian).signed_id}" } }
-  let(:member_headers)    { { "Authorization" => "Bearer #{users(:existing_member).signed_id}" } }
+  let(:member_headers)    { { "Authorization" => "Bearer #{users(:member).signed_id}" } }
 
   describe "GET /books/due_today" do
     it "returns borrowings due today" do

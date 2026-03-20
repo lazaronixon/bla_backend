@@ -15,7 +15,7 @@ RSpec.describe "Registrations", type: :request do
     context "with invalid parameters" do
       it "does not create a user and returns 422" do
         expect {
-          post "/sign_up", params: { email_address: users(:existing_member).email_address, password: "secret123", password_confirmation: "secret123" }, as: :json
+          post "/sign_up", params: { email_address: users(:member).email_address, password: "secret123", password_confirmation: "secret123" }, as: :json
         }.not_to change(User, :count)
 
         expect(response).to have_http_status(:unprocessable_content)

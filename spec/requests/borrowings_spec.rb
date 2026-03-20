@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "/books/:book_id/borrowings", type: :request do
-  let(:auth_headers) { { "Authorization" => "Bearer #{users(:existing_member).signed_id}" } }
+  let(:auth_headers) { { "Authorization" => "Bearer #{users(:member).signed_id}" } }
 
   describe "GET /index" do
     it "renders a successful response" do
@@ -19,9 +19,9 @@ RSpec.describe "/books/:book_id/borrowings", type: :request do
 
   describe "POST /create" do
     it "creates a new borrowing" do
-      another_member_headers = { "Authorization" => "Bearer #{users(:fresh_member).signed_id}" }
+      member_two_headers = { "Authorization" => "Bearer #{users(:member_three).signed_id}" }
       expect {
-        post book_borrowings_url(books(:dune)), headers: another_member_headers, as: :json
+        post book_borrowings_url(books(:dune)), headers: member_two_headers, as: :json
       }.to change(Borrowing, :count).by(1)
 
       expect(response).to have_http_status(:created)
