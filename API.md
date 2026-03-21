@@ -58,6 +58,16 @@ X-Session-Token: eyJfcmFpbHMi...
 X-Session-Expires-In: 1209600
 ```
 
+```json
+{
+  "id": 1,
+  "email_address": "user@example.com",
+  "role": "member",
+  "created_at": "2026-03-20T00:00:00.000Z",
+  "updated_at": "2026-03-20T00:00:00.000Z"
+}
+```
+
 The session token is returned in the `X-Session-Token` response header. `X-Session-Expires-In` contains the token's lifetime in seconds.
 
 __Error responses:__
