@@ -13,13 +13,9 @@ class BorrowingsController < ApplicationController
   end
 
   def create
-    @borrowing = @book.borrowings.build
-
-    if @borrowing.save
-      render(:show, status: :created)
-    else
-      render json: @borrowing.errors, status: :unprocessable_content
-    end
+    @borrowing = @book.borrowings.create!; render(:show, status: :created)
+  rescue ActiveRecord::RecordInvalid => e
+    render json: { error: e.message }, status: :unprocessable_content
   end
 
   def update

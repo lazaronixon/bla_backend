@@ -39,7 +39,7 @@ RSpec.describe "/books/:book_id/borrowings", type: :request do
       }.not_to change(Borrowing, :count)
 
       expect(response).to have_http_status(:unprocessable_content)
-      expect(response.parsed_body["book"]).to include("is not available")
+      expect(response.parsed_body["error"]).to include("is not available")
     end
 
     it "returns unprocessable when book is already borrowed by the user" do
@@ -48,7 +48,7 @@ RSpec.describe "/books/:book_id/borrowings", type: :request do
       }.not_to change(Borrowing, :count)
 
       expect(response).to have_http_status(:unprocessable_content)
-      expect(response.parsed_body["book"]).to include("is already borrowed")
+      expect(response.parsed_body["error"]).to include("is already borrowed")
     end
   end
 

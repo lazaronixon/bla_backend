@@ -36,7 +36,7 @@ __Error responses:__
 
 | Status Code | Description |
 |-------------|-------------|
-| `422 Unprocessable Entity` | Validation failed (e.g. email taken, password too short, confirmation mismatch) |
+| `422 Unprocessable Content` | Validation failed (e.g. email taken, password too short, confirmation mismatch) |
 
 ### Sign In
 
@@ -109,7 +109,7 @@ Returns a plain text confirmation message. Tokens expire automatically — signi
 | `401 Unauthorized` | Missing or invalid session token |
 | `403 Forbidden` | Valid token, but your role doesn't permit this action |
 | `404 Not Found` | The requested resource doesn't exist |
-| `422 Unprocessable Entity` | Validation failed (see response body for details) |
+| `422 Unprocessable Content` | Validation failed (see response body for details) |
 
 A `422` response may include details about which fields failed:
 
@@ -306,7 +306,13 @@ __Error responses:__
 
 | Status Code | Description |
 |-------------|-------------|
-| `422 Unprocessable Entity` | No copies available, or member already has this book borrowed |
+| `422 Unprocessable Content` | No copies available, or member already has this book borrowed |
+
+```json
+{
+  "error": "Validation failed: Book is not available"
+}
+```
 
 ### `PATCH /books/:book_id/borrowings/:id` _[librarian only]_
 
