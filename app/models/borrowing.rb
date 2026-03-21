@@ -19,6 +19,6 @@ class Borrowing < ApplicationRecord
     end
 
     def book_borrowed_multiple_times
-      errors.add(:book, :borrowed, message: "is already borrowed") if book.borrowed_for?(user)
+      errors.add(:book, :borrowed, message: "is already borrowed to you") if book.borrowed_for?(user)
     end
 end

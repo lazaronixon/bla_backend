@@ -194,13 +194,11 @@ __Request:__
 
 ```json
 {
-  "book": {
-    "title": "The Lord of the Rings",
-    "author": "J.R.R. Tolkien",
-    "genre": "Fantasy",
-    "isbn": "9780261102354",
-    "copies": 3
-  }
+  "title": "The Lord of the Rings",
+  "author": "J.R.R. Tolkien",
+  "genre": "Fantasy",
+  "isbn": "9780261102354",
+  "copies": 3
 }
 ```
 
@@ -310,7 +308,13 @@ __Error responses:__
 
 ```json
 {
-  "error": "Validation failed: Book is not available"
+  "error": "Book is not available"
+}
+```
+
+```json
+{
+  "error": "Book is already borrowed to you"
 }
 ```
 

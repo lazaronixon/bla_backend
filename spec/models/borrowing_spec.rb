@@ -19,7 +19,7 @@ RSpec.describe Borrowing, type: :model do
       it "is invalid when the user already has an active borrowing for the book" do
         borrowing = Borrowing.new(user: users(:member), book: books(:dune))
         expect(borrowing).to be_invalid
-        expect(borrowing.errors[:book]).to include("is already borrowed")
+        expect(borrowing.errors[:book]).to include("is already borrowed to you")
       end
 
       it "is valid when the user has no active borrowing for the book" do
