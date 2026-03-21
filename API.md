@@ -313,6 +313,30 @@ __Response:__
 
 Returns `204 No Content` on success.
 
+## My Profile
+
+### `GET /my/user`
+
+Returns the profile of the currently authenticated user.
+
+```bash
+curl -H "Authorization: Bearer eyJfcmFpbHMi..." \
+  -H "Accept: application/json" \
+  http://localhost:3000/my/user
+```
+
+__Response:__
+
+```json
+{
+  "id": 1,
+  "email_address": "user@example.com",
+  "role": "member",
+  "created_at": "2026-03-20T00:00:00.000Z",
+  "updated_at": "2026-03-20T00:00:00.000Z"
+}
+```
+
 ## Dashboard
 
 Dashboard endpoints provide summary views for librarians and members.

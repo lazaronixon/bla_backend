@@ -13,6 +13,10 @@ Rails.application.routes.draw do
   post   "sign_in",  to: "sessions#create"
   delete "sign_out", to: "sessions#destroy"
 
+  namespace :my do
+    resource :user, only: :show
+  end
+ 
   namespace :books do
     resource :total,     only: :show
     resource :due_today, only: :show
