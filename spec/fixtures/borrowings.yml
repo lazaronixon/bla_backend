@@ -1,7 +1,7 @@
 active_borrowing:
   user: member
   book: dune
-  due_at: <%= 2.weeks.from_now %>
+  due_at: <%= 2.weeks.from_now.end_of_day %>
 
 due_today_borrowing:
   user: member_two
@@ -11,14 +11,14 @@ due_today_borrowing:
 overdue_borrowing:
   user: member_two
   book: pride_and_prejudice
-  due_at: <%= 1.day.ago %>
+  due_at: <%= 1.day.ago.end_of_day %>
 
 pride_and_prejudice_full_1:
   user: member
   book: pride_and_prejudice
-  due_at: <%= 2.weeks.from_now %>
+  due_at: <%= 2.weeks.from_now.end_of_day %>
 
 pride_and_prejudice_full_2:
   user: librarian
   book: pride_and_prejudice
-  due_at: <%= 2.weeks.from_now %>
+  due_at: <%= 2.weeks.from_now.end_of_day %>
