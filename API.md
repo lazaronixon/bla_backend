@@ -55,9 +55,10 @@ __Response:__
 ```
 HTTP/1.1 201 Created
 X-Session-Token: eyJfcmFpbHMi...
+X-Session-Expires-In: 1209600
 ```
 
-The session token is returned in the `X-Session-Token` response header. Tokens expire after **15 minutes**.
+The session token is returned in the `X-Session-Token` response header. `X-Session-Expires-In` contains the token's lifetime in seconds.
 
 __Error responses:__
 
@@ -77,7 +78,7 @@ curl -H "Authorization: Bearer eyJfcmFpbHMi..." \
 
 > [!IMPORTANT]
 > __A session token is like a password, keep it secret and do not share it with anyone.__
-> Tokens expire automatically after 15 minutes. Re-authenticate to get a new one.
+> Tokens expire automatically. Re-authenticate to get a new one.
 
 ### Sign Out
 

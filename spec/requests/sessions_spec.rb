@@ -8,6 +8,7 @@ RSpec.describe "Sessions", type: :request do
 
         expect(response).to have_http_status(:created)
         expect(response.headers["X-Session-Token"]).to be_present
+        expect(response.headers["X-Session-Expires-In"]).to eq(SessionsController::SESSION_DURATION)
       end
     end
 
