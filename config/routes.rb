@@ -16,7 +16,7 @@ Rails.application.routes.draw do
   namespace :my do
     resource :user, only: :show
   end
- 
+
   namespace :books do
     resource :total,     only: :show
     resource :due_today, only: :show
