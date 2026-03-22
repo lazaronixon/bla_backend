@@ -17,14 +17,14 @@ Rails.application.routes.draw do
     resource :user, only: :show
   end
 
+  namespace :members do
+    resource :with_overdue_books, only: :show
+  end
+
   namespace :books do
     resource :total,     only: :show
     resource :due_today, only: :show
     resource :borrowed,  only: :show
-  end
-
-  namespace :members do
-    resource :with_overdue_books, only: :show
   end
 
   resources :books do
