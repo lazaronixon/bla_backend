@@ -6,10 +6,10 @@ class Book < ApplicationRecord
   scope :search, ->(query) { where("LOWER(title || ' ' || author || ' ' || genre) LIKE ?", "%#{query.downcase}%") }
 
   def available?
-    copies > borrowings.active.count
+    copies > borrowings.not_returned.count
   end
 
   def borrowed_for?(user)
-    borrowings.active.where(user:).exists?
+    borrowings.not_returned.where(user:).exists?
   end
 end

@@ -8,7 +8,7 @@ RSpec.describe "/books/total", type: :request do
       get books_total_url, headers: auth_headers, as: :json
       expect(response).to be_successful
       expect(response.parsed_body["total_books"]).to eq(Book.sum(:copies))
-      expect(response.parsed_body["total_borrowed"]).to eq(Borrowing.active.count)
+      expect(response.parsed_body["total_borrowed"]).to eq(Borrowing.not_returned.count)
     end
   end
 end

@@ -3,6 +3,6 @@ class Books::TotalsController < ApplicationController
 
   def show
     @total_books    = Book.sum(:copies)
-    @total_borrowed = Borrowing.active.count
+    @total_borrowed = Borrowing.not_returned.count
   end
 end
