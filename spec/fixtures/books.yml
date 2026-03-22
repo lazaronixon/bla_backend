@@ -11,3 +11,73 @@ pride_and_prejudice:
   genre: Romance
   isbn: 978-0141439518
   copies: 2
+
+the_great_gatsby:
+  title: The Great Gatsby
+  author: F. Scott Fitzgerald
+  genre: Classic Fiction
+  isbn: 978-0743273565
+  copies: 4
+
+nineteen_eighty_four:
+  title: 1984
+  author: George Orwell
+  genre: Dystopian
+  isbn: 978-0451524935
+  copies: 3
+
+hitchhikers_guide:
+  title: The Hitchhiker's Guide to the Galaxy
+  author: Douglas Adams
+  genre: Sci-Fi
+  isbn: 978-0345391803
+  copies: 2
+
+harry_potter_1:
+  title: "Harry Potter and the Sorcerer's Stone"
+  author: J.K. Rowling
+  genre: Fantasy
+  isbn: 978-0439708180
+  copies: 5
+
+lord_of_the_rings:
+  title: The Lord of the Rings
+  author: J.R.R. Tolkien
+  genre: Fantasy
+  isbn: 978-0618640157
+  copies: 2
+
+gone_girl:
+  title: Gone Girl
+  author: Gillian Flynn
+  genre: Thriller
+  isbn: 978-0307588364
+  copies: 3
+
+sapiens:
+  title: "Sapiens: A Brief History of Humankind"
+  author: Yuval Noah Harari
+  genre: History
+  isbn: 978-0062316097
+  copies: 4
+
+atomic_habits:
+  title: Atomic Habits
+  author: James Clear
+  genre: Self-Help
+  isbn: 978-0735211292
+  copies: 4
+
+the_alchemist:
+  title: The Alchemist
+  author: Paulo Coelho
+  genre: Fiction
+  isbn: 978-0062315007
+  copies: 3
+
+to_kill_a_mockingbird:
+  title: To Kill a Mockingbird
+  author: Harper Lee
+  genre: Classic Fiction
+  isbn: 978-0061935466
+  copies: 2

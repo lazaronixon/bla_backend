@@ -17,3 +17,33 @@ librarian:
   email_address: librarian@example.com
   password_digest: <%= BCrypt::Password.create("password123") %>
   role: librarian
+
+librarian_two:
+  email_address: sarah.johnson@library.com
+  password_digest: <%= BCrypt::Password.create("password123") %>
+  role: librarian
+
+alice:
+  email_address: alice.chen@example.com
+  password_digest: <%= BCrypt::Password.create("password123") %>
+  role: member
+
+bob:
+  email_address: bob.martinez@example.com
+  password_digest: <%= BCrypt::Password.create("password123") %>
+  role: member
+
+carol:
+  email_address: carol.thompson@example.com
+  password_digest: <%= BCrypt::Password.create("password123") %>
+  role: member
+
+david:
+  email_address: david.williams@example.com
+  password_digest: <%= BCrypt::Password.create("password123") %>
+  role: member
+
+emma:
+  email_address: emma.davis@example.com
+  password_digest: <%= BCrypt::Password.create("password123") %>
+  role: member
