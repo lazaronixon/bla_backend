@@ -9,7 +9,7 @@ class Borrowing < ApplicationRecord
   scope :due_today,    -> { not_returned.where due_at: Time.current.all_day }
   scope :overdue,      -> { not_returned.where due_at: ..Time.current }
 
-  before_create { self.due_at = 2.weeks.from_now.end_of_day }
+  before_create { self.due_at = 2.weeks.from_now }
 
   validate :book_available, on: :create
   validate :book_borrowed_multiple_times, on: :create

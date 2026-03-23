@@ -1,119 +1,119 @@
 active_borrowing:
   user: member
   book: dune
-  due_at: <%= 2.weeks.from_now.end_of_day %>
+  due_at: <%= 2.weeks.from_now %>
 
 due_today_borrowing:
   user: member_two
   book: dune
-  due_at: <%= Time.current.end_of_day %>
+  due_at: <%= Time.current %>
 
 overdue_borrowing:
   user: member_two
   book: pride_and_prejudice
-  due_at: <%= 1.day.ago.end_of_day %>
+  due_at: <%= 1.day.ago %>
 
 pride_and_prejudice_full_1:
   user: member
   book: pride_and_prejudice
-  due_at: <%= 2.weeks.from_now.end_of_day %>
+  due_at: <%= 2.weeks.from_now %>
 
 pride_and_prejudice_full_2:
   user: librarian
   book: pride_and_prejudice
-  due_at: <%= 2.weeks.from_now.end_of_day %>
+  due_at: <%= 2.weeks.from_now %>
 
 # Active — on track
 alice_borrows_harry_potter:
   user: alice
   book: harry_potter_1
-  due_at: <%= 10.days.from_now.end_of_day %>
+  due_at: <%= 10.days.from_now %>
 
 alice_borrows_atomic_habits:
   user: alice
   book: atomic_habits
-  due_at: <%= 2.weeks.from_now.end_of_day %>
+  due_at: <%= 2.weeks.from_now %>
 
 carol_borrows_alchemist:
   user: carol
   book: the_alchemist
-  due_at: <%= 5.days.from_now.end_of_day %>
+  due_at: <%= 5.days.from_now %>
 
 david_borrows_great_gatsby:
   user: david
   book: the_great_gatsby
-  due_at: <%= 1.week.from_now.end_of_day %>
+  due_at: <%= 1.week.from_now %>
 
 emma_borrows_lord_of_the_rings:
   user: emma
   book: lord_of_the_rings
-  due_at: <%= 12.days.from_now.end_of_day %>
+  due_at: <%= 12.days.from_now %>
 
 member_three_borrows_mockingbird:
   user: member_three
   book: to_kill_a_mockingbird
-  due_at: <%= 4.days.from_now.end_of_day %>
+  due_at: <%= 4.days.from_now %>
 
 bob_borrows_sapiens:
   user: bob
   book: sapiens
-  due_at: <%= 3.days.from_now.end_of_day %>
+  due_at: <%= 3.days.from_now %>
 
 # Due today
 carol_due_today_gone_girl:
   user: carol
   book: gone_girl
-  due_at: <%= Time.current.end_of_day %>
+  due_at: <%= Time.current %>
 
 # Overdue
 bob_overdue_1984:
   user: bob
   book: nineteen_eighty_four
-  due_at: <%= 3.days.ago.end_of_day %>
+  due_at: <%= 3.days.ago %>
 
 david_overdue_lotr:
   user: david
   book: lord_of_the_rings
-  due_at: <%= 5.days.ago.end_of_day %>
+  due_at: <%= 5.days.ago %>
 
 emma_overdue_hitchhikers:
   user: emma
   book: hitchhikers_guide
-  due_at: <%= 2.days.ago.end_of_day %>
+  due_at: <%= 2.days.ago %>
 
 member_three_overdue_gatsby:
   user: member_three
   book: the_great_gatsby
-  due_at: <%= 4.days.ago.end_of_day %>
+  due_at: <%= 4.days.ago %>
 
 # Returned — on time
 alice_returned_1984:
   user: alice
   book: nineteen_eighty_four
-  due_at: <%= 1.week.ago.end_of_day %>
+  due_at: <%= 1.week.ago %>
   returned_at: <%= 10.days.ago %>
 
 bob_returned_harry_potter:
   user: bob
   book: harry_potter_1
-  due_at: <%= 2.weeks.ago.end_of_day %>
+  due_at: <%= 2.weeks.ago %>
   returned_at: <%= 16.days.ago %>
 
 emma_returned_great_gatsby:
   user: emma
   book: the_great_gatsby
-  due_at: <%= 1.week.ago.end_of_day %>
+  due_at: <%= 1.week.ago %>
   returned_at: <%= 9.days.ago %>
 
 # Returned — late
 carol_returned_dune:
   user: carol
   book: dune
-  due_at: <%= 3.weeks.ago.end_of_day %>
+  due_at: <%= 3.weeks.ago %>
   returned_at: <%= 2.weeks.ago %>
 
 david_returned_atomic_habits:
   user: david
   book: atomic_habits
-  due_at: <%= 1.month.ago.end_of_day %>
+  due_at: <%= 1.month.ago %>
   returned_at: <%= 3.weeks.ago %>
