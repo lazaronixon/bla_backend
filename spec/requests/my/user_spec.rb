@@ -16,6 +16,8 @@ RSpec.describe "GET /my/user", type: :request do
       expect(body["id"]).to eq(users(:member).id)
       expect(body["email_address"]).to eq(users(:member).email_address)
       expect(body["role"]).to eq("member")
+      expect(body["borrowed_books_count"]).to eq(users(:member).borrowed_books_count)
+      expect(body["overdue_books_count"]).to eq(users(:member).overdue_books_count)
     end
   end
 

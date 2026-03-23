@@ -27,6 +27,8 @@ HTTP/1.1 201 Created
   "id": 1,
   "email_address": "user@example.com",
   "role": "member",
+  "borrowed_books_count": 0,
+  "overdue_books_count": 0,
   "created_at": "2026-03-20T00:00:00.000Z",
   "updated_at": "2026-03-20T00:00:00.000Z"
 }
@@ -63,6 +65,8 @@ X-Session-Expires-In: 1209600
   "id": 1,
   "email_address": "user@example.com",
   "role": "member",
+  "borrowed_books_count": 0,
+  "overdue_books_count": 0,
   "created_at": "2026-03-20T00:00:00.000Z",
   "updated_at": "2026-03-20T00:00:00.000Z"
 }
@@ -258,6 +262,8 @@ __Response:__
       "id": 2,
       "email_address": "member@example.com",
       "role": "member",
+      "borrowed_books_count": 1,
+      "overdue_books_count": 0,
       "created_at": "2026-01-01T00:00:00.000Z",
       "updated_at": "2026-01-01T00:00:00.000Z"
     },
@@ -356,10 +362,14 @@ __Response:__
   "id": 1,
   "email_address": "user@example.com",
   "role": "member",
+  "borrowed_books_count": 2,
+  "overdue_books_count": 0,
   "created_at": "2026-03-20T00:00:00.000Z",
   "updated_at": "2026-03-20T00:00:00.000Z"
 }
 ```
+
+`borrowed_books_count` is the number of books the user currently has checked out (not yet returned). `overdue_books_count` is the number of those borrowings that are past their due date.
 
 ## Dashboard
 
@@ -401,6 +411,8 @@ __Response:__
     "id": 2,
     "email_address": "member@example.com",
     "role": "member",
+    "borrowed_books_count": 3,
+    "overdue_books_count": 1,
     "created_at": "2026-01-01T00:00:00.000Z",
     "updated_at": "2026-01-01T00:00:00.000Z"
   }

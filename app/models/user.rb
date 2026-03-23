@@ -12,4 +12,12 @@ class User < ApplicationRecord
   validates :password, allow_nil: true, length: { minimum: 6 }
 
   normalizes :email_address, with: ->(e) { e.strip.downcase }
+
+  def borrowed_books_count
+    borrowings.not_returned.count
+  end
+
+  def overdue_books_count
+    borrowings.overdue.count
+  end
 end
