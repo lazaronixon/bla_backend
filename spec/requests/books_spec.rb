@@ -21,6 +21,11 @@ RSpec.describe "/books", type: :request do
       get book_url(books(:dune)), headers: auth_headers, as: :json
       expect(response).to be_successful
     end
+
+    it "includes available count in the response" do
+      get book_url(books(:dune)), headers: auth_headers, as: :json
+      expect(response.parsed_body["available"]).to eq(books(:dune).available)
+    end
   end
 
   describe "POST /create" do

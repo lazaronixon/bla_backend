@@ -5,6 +5,10 @@ class Book < ApplicationRecord
   scope :chronologically,         -> { order created_at: :asc,  id: :asc  }
   scope :search, ->(query) { where("LOWER(title || ' ' || author || ' ' || genre) LIKE ?", "%#{query.downcase}%") }
 
+  def available
+    copies - borrowings.not_returned.count
+  end
+
   def available?
     copies > borrowings.not_returned.count
   end
