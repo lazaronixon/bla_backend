@@ -23,7 +23,6 @@ Rails.application.routes.draw do
 
   namespace :books do
     resource :total,     only: :show
-    resource :due_today, only: :show
     resource :borrowed,  only: :show
   end
 

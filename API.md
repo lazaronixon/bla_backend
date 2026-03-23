@@ -371,19 +371,12 @@ __Response:__
 ```json
 {
   "total_books": 42,
-  "total_borrowed": 15
+  "total_borrowed": 15,
+  "total_due_today": 3
 }
 ```
 
-`total_books` is the count of all books in the catalog. `total_borrowed` is the count of active (unreturned) borrowings.
-
-### `GET /books/due_today` _[librarian only]_
-
-Returns all active borrowings with a due date of today.
-
-__Response:__
-
-Returns an array of borrowing objects (same shape as `GET /books/:book_id/borrowings`).
+`total_books` is the count of all books in the catalog. `total_borrowed` is the count of active (unreturned) borrowings. `total_due_today` is the count of active borrowings due today.
 
 ### `GET /books/borrowed` _[member only]_
 
